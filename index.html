@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansa Patel | Bridal Makeup Artist</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        marigold: '#FFB300',
+                        weddingRed: '#9B2C2C', /* Slightly deeper for text readability */
+                        brightRed: '#D32F2F',
+                        emerald: '#2E7D32',
+                        cream: '#FFFDD0',
+                        gold: '#B78846',
+                        sand: '#FDF5E6'
+                    },
+                    fontFamily: {
+                        heading: ['"Rozha One"', 'serif'],
+                        body: ['"Open Sans"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'mandala-pattern': "radial-gradient(#B78846 1.5px, transparent 1.5px), radial-gradient(#B78846 1.5px, transparent 1.5px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            background-color: #FFFDD0;
+            color: #2D3748;
+        }
+
+        .font-rozha {
+            font-family: 'Rozha One', serif;
+        }
+
+        .mandala-bg {
+            background-color: #FFFDD0;
+            background-image:  radial-gradient(#D32F2F 0.5px, transparent 0.5px), radial-gradient(#FFB300 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        .hero-pattern {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1583934555026-6d60a5d41d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Card Hover Effects */
+        .price-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Interactive Checkbox Animation */
+        .checkbox-wrapper input:checked + div {
+            background-color: #2E7D32;
+            border-color: #2E7D32;
+        }
+        .checkbox-wrapper input:checked + div svg {
+            display: block;
+        }
+
+        /* Tab Active States */
+        .tab-active {
+            background-color: #D32F2F;
+            color: white;
+            border-color: #D32F2F;
+        }
+        .tab-inactive {
+            background-color: white;
+            color: #4A5568;
+            border-color: #E2E8F0;
+        }
+        .tab-inactive:hover {
+            background-color: #FFF5F5;
+        }
+
+        /* Calculator Styles */
+        .calc-input:checked + label {
+            background-color: #FFB300;
+            color: #000;
+            font-weight: bold;
+            border-color: #FFB300;
+        }
+    </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gold/30 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading text-2xl text-weddingRed">Hansa Patel</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#experience" class="text-gray-700 hover:text-weddingRed transition-colors font-medium">The Experience</a>
+                    <a href="#services" class="text-gray-700 hover:text-weddingRed transition-colors font-medium">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-weddingRed transition-colors font-medium">Pricing</a>
+                    <a href="#contact" class="px-6 py-2 bg-weddingRed text-white rounded-full font-medium hover:bg-red-800 transition shadow-lg transform hover:scale-105">Book Date</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 hover:text-weddingRed focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-t from-emerald to-transparent opacity-80"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6 animate-fade-in-up">
+            <div class="inline-block px-4 py-1 border border-gold/50 rounded-full bg-black/20 backdrop-blur-md mb-4">
+                <span class="text-gold font-semibold tracking-wider text-sm uppercase">Based in Mumbai • Available Globally</span>
+            </div>
+            <h1 class="font-heading text-5xl md:text-7xl text-cream leading-tight drop-shadow-xl">
+                Creating Timeless Beauty<br>for Every Occasion
+            </h1>
+            <p class="text-xl text-gray-100 max-w-2xl mx-auto font-light">
+                From the Haldi glow to the Royal Wedding grandeur. Let's curate your signature look.
+            </p>
+            <div class="pt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-marigold text-emerald-900 font-bold rounded-full shadow-xl hover:bg-yellow-400 transition transform hover:-translate-y-1">
+                    Check Wedding Dates
+                </a>
+                <a href="#experience" class="px-8 py-4 bg-transparent border-2 border-cream text-cream font-bold rounded-full hover:bg-cream hover:text-emerald-900 transition">
+                    View Interactive Demo
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-cream animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- The Problem / Solution -->
+    <section class="py-20 bg-cream mandala-bg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-gray-400 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-gray-200 text-gray-600 text-xs font-bold px-3 py-1 rounded-bl-lg">THE USUAL WAY</div>
+                    <h3 class="font-heading text-2xl text-gray-500 mb-4">Chaos in DMs</h3>
+                    <ul class="space-y-3 text-gray-500">
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="text-red-400 w-4 h-4"></i> "Are you available?" (No reply for days)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="text-red-400 w-4 h-4"></i> Hidden travel costs & surprise fees.</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="text-red-400 w-4 h-4"></i> Cookie-cutter looks for every bride.</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-marigold relative overflow-hidden transform md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-marigold text-emerald-900 text-xs font-bold px-3 py-1 rounded-bl-lg">THE HANSA PATEL WAY</div>
+                    <h3 class="font-heading text-2xl text-weddingRed mb-4">Structured Elegance</h3>
+                    <ul class="space-y-3 text-emerald-900 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-emerald w-5 h-5"></i> Dedicated consultation for Destination Weddings.</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-emerald w-5 h-5"></i> Transparent Travel Logistics Module.</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-emerald w-5 h-5"></i> Bespoke looks curated for your face shape & outfit.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⭐ THE SIGNATURE INTERACTIVE STUDIO ⭐ -->
+    <section id="experience" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Mandala SVG (CSS) -->
+        <div class="absolute -right-20 top-20 opacity-10 pointer-events-none">
+            <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#D32F2F" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.9,32.2C59.6,42.9,48.3,51.4,36.4,58.6C24.5,65.8,11.9,71.7,-1.4,74.1C-14.7,76.5,-28.1,75.4,-40.5,69.1C-52.9,62.8,-64.3,51.3,-73.2,38.1C-82.1,24.9,-88.5,10,-86.6,-4.1C-84.7,-18.2,-74.5,-31.5,-63.4,-41.8C-52.3,-52.1,-40.3,-59.4,-28.3,-68.2C-16.3,-77,-4.3,-87.3,4.4,-94.9C13.1,-102.5,26.2,-107.4,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-marigold font-bold tracking-widest uppercase text-sm">Interactive Demo</span>
+                <h2 class="font-heading text-4xl md:text-5xl text-emerald-900 mt-2">Visualize Your Wedding Week</h2>
+                <p class="text-gray-600 mt-4">Select an event to see how we transform your look for every moment.</p>
+            </div>
+
+            <!-- Event Selector Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button onclick="setEvent('haldi')" id="btn-haldi" class="px-6 py-3 rounded-full border-2 font-bold transition-all duration-300 tab-active">Haldi / Mehendi</button>
+                <button onclick="setEvent('sangeet')" id="btn-sangeet" class="px-6 py-3 rounded-full border-2 font-bold transition-all duration-300 tab-inactive">Sangeet Night</button>
+                <button onclick="setEvent('wedding')" id="btn-wedding" class="px-6 py-3 rounded-full border-2 font-bold transition-all duration-300 tab-inactive">The Wedding</button>
+                <button onclick="setEvent('reception')" id="btn-reception" class="px-6 py-3 rounded-full border-2 font-bold transition-all duration-300 tab-inactive">Reception</button>
+            </div>
+
+            <!-- Dynamic Content Container -->
+            <div id="demo-container" class="bg-yellow-50 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 border border-gold/20 flex flex-col md:flex-row gap-12 items-center">
+                
+                <!-- Dynamic Image Area (CSS Gradients representing looks) -->
+                <div class="w-full md:w-1/2">
+                    <div id="look-visual" class="aspect-[4/5] rounded-2xl shadow-inner relative overflow-hidden bg-gradient-to-br from-yellow-200 to-yellow-500 transition-all duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i id="look-icon" data-lucide="sun" class="w-24 h-24 text-white opacity-80 drop-shadow-lg"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                            <p id="look-caption" class="text-white font-rozha text-2xl">The Golden Hour Glow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded bg-white shadow-sm text-xs font-bold uppercase tracking-wide text-gray-500" id="event-tag">Day Event</div>
+                    <h3 id="event-title" class="font-heading text-4xl text-emerald-900">Haldi & Mehendi</h3>
+                    <p id="event-desc" class="text-gray-700 text-lg leading-relaxed">
+                        For the Haldi, we keep it breathable and radiant. Using waterproof bases that withstand turmeric and water, coupled with floral accents in the hair. The focus is on skin that looks like skin, but better.
+                    </p>
+                    
+                    <div class="bg-white/60 p-6 rounded-xl border border-white/50">
+                        <h4 class="font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-marigold"></i> Key Makeup Elements
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700" id="makeup-list">
+                            <li>• Dewy, waterproof base</li>
+                            <li>• Soft peach/pink blush</li>
+                            <li>• Minimal eye makeup</li>
+                            <li>• Fresh floral hair accessories</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4">
+                        <button class="text-weddingRed font-bold border-b-2 border-weddingRed hover:text-red-700 transition">See Portfolio for this look &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing -->
+    <section id="pricing" class="py-20 bg-sand">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl text-emerald-900">Investment & Packages</h2>
+                <p class="text-gray-600 mt-2">Transparency is beautiful.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="price-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col">
+                    <h3 class="font-heading text-2xl text-gray-800">The Mumbai Edit</h3>
+                    <p class="text-sm text-gray-500 mb-6">For local weddings within city limits.</p>
+                    <div class="text-4xl font-bold text-emerald-900 mb-6">₹ Standard</div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Bridal Makeup & Hair</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Draping included</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Premium Lashes</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Studio or Venue trial (Extra)</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 border-2 border-emerald-900 text-emerald-900 font-bold rounded-lg hover:bg-emerald-900 hover:text-white transition">Inquire Now</a>
+                </div>
+
+                <!-- Plan 2 (Highlighted) -->
+                <div class="price-card bg-emerald-900 text-white p-8 rounded-2xl shadow-xl relative transform md:-translate-y-4 border-2 border-gold">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-marigold text-emerald-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+                    <h3 class="font-heading text-2xl text-marigold">Destination Package</h3>
+                    <p class="text-sm text-emerald-100 mb-6">Global availability. Logistics simplified.</p>
+                    <div class="text-4xl font-bold text-white mb-6">Custom</div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> <strong>All Events Coverage</strong></li>
+                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> 1 Family Member Complimentary</li>
+                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Touch-ups between events</li>
+                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Travel Logic Module Included</li>
+                    </ul>
+                    
+                    <!-- Mini Travel Calculator Module -->
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm mb-6 border border-white/20">
+                        <p class="text-xs text-marigold uppercase font-bold mb-2">Destination Calculator</p>
+                        <div class="flex gap-2 mb-2">
+                            <input type="radio" name="loc" id="loc-mum" class="hidden calc-input" checked onchange="calcTravel()">
+                            <label for="loc-mum" class="flex-1 text-center text-xs py-2 rounded bg-emerald-800 cursor-pointer border border-emerald-700 hover:bg-emerald-700 transition">Mumbai</label>
+                            
+                            <input type="radio" name="loc" id="loc-out" class="hidden calc-input" onchange="calcTravel()">
+                            <label for="loc-out" class="flex-1 text-center text-xs py-2 rounded bg-emerald-800 cursor-pointer border border-emerald-700 hover:bg-emerald-700 transition">Outstation</label>
+                        </div>
+                        <div id="travel-result" class="text-xs text-center italic text-emerald-100">
+                            Includes travel within Mumbai limits.
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="block text-center py-3 bg-marigold text-emerald-900 font-bold rounded-lg hover:bg-white transition">Get Custom Quote</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="price-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col">
+                    <h3 class="font-heading text-2xl text-gray-800">The Royal Bride</h3>
+                    <p class="text-sm text-gray-500 mb-6">For the comprehensive bridal party.</p>
+                    <div class="text-4xl font-bold text-emerald-900 mb-6">₹ Premium</div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Bride + 3 Bridesmaids</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Mother of Bride included</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Jewellery Styling assist</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-emerald"></i> Full day shadow artist</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 border-2 border-emerald-900 text-emerald-900 font-bold rounded-lg hover:bg-emerald-900 hover:text-white transition">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist & Contact Combined -->
+    <section class="py-20 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-16">
+            
+            <!-- Value Add: Trousseau Checklist -->
+            <div class="lg:w-1/2">
+                <h2 class="font-heading text-3xl text-emerald-900 mb-6">The Bride's Essentials</h2>
+                <p class="text-gray-600 mb-6">A complimentary checklist for your big day. Don't forget these in your trousseau!</p>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-marigold">
+                    <div class="space-y-4" id="checklist-container">
+                        <!-- Items generated by JS or static -->
+                        <label class="checkbox-wrapper flex items-center gap-4 p-3 rounded hover:bg-gray-50 cursor-pointer group">
+                            <input type="checkbox" class="hidden">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center transition-colors">
+                                <svg class="w-4 h-4 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-emerald-900 transition">Emergency Makeup Kit (Blotting paper, lipstick)</span>
+                        </label>
+                        <label class="checkbox-wrapper flex items-center gap-4 p-3 rounded hover:bg-gray-50 cursor-pointer group">
+                            <input type="checkbox" class="hidden">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center transition-colors">
+                                <svg class="w-4 h-4 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-emerald-900 transition">Safety pins & Double-sided tape</span>
+                        </label>
+                        <label class="checkbox-wrapper flex items-center gap-4 p-3 rounded hover:bg-gray-50 cursor-pointer group">
+                            <input type="checkbox" class="hidden">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center transition-colors">
+                                <svg class="w-4 h-4 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-emerald-900 transition">Hydrating Mist (For long ceremonies)</span>
+                        </label>
+                        <label class="checkbox-wrapper flex items-center gap-4 p-3 rounded hover:bg-gray-50 cursor-pointer group">
+                            <input type="checkbox" class="hidden">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center transition-colors">
+                                <svg class="w-4 h-4 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-emerald-900 transition">Comfortable footwear for dancing</span>
+                        </label>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 text-center">
+                        <p class="text-xs text-gray-400">Save this list for later.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div id="contact" class="lg:w-1/2">
+                <div class="bg-emerald-900 text-white p-8 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#FFB300 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="font-heading text-3xl mb-2 text-marigold">Check Availability</h2>
+                        <p class="text-emerald-100 mb-8 text-sm">Dates for the upcoming wedding season are filling fast.</p>
+                        
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Hansa will contact you shortly.');">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-marigold mb-1">Name</label>
+                                    <input type="text" class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold" placeholder="Bride's Name">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-marigold mb-1">Phone</label>
+                                    <input type="tel" class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold" placeholder="+91">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-marigold mb-1">Event Date</label>
+                                    <input type="date" class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-marigold mb-1">City/Venue</label>
+                                    <input type="text" class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold" placeholder="e.g. Udaipur">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-marigold mb-1">Approx Guest Count (For styling logistics)</label>
+                                <select class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold">
+                                    <option>Intimate (< 100)</option>
+                                    <option>Standard (100 - 500)</option>
+                                    <option>Grand (> 500)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-marigold mb-1">Message</label>
+                                <textarea rows="3" class="w-full bg-emerald-800 border border-emerald-700 rounded p-3 text-white focus:outline-none focus:border-marigold" placeholder="Tell me about your dream look..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-marigold text-emerald-900 font-bold py-4 rounded hover:bg-white hover:text-emerald-900 transition-colors duration-300">
+                                Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl text-marigold mb-4">Hansa Patel</h2>
+            <p class="text-gray-400 mb-8">Making brides feel like royalty since 2018.</p>
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-marigold transition"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-marigold transition"><i data-lucide="facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-marigold transition"><i data-lucide="mail"></i></a>
+            </div>
+            
+            <div class="text-sm text-gray-600">
+                &copy; 2024 Hansa Patel Makeup Artist. All rights reserved.<br>
+                <span class="text-xs">Designed by Jetweb Labs</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // 1. Theme/Event Switcher Logic
+        const events = {
+            haldi: {
+                title: "Haldi & Mehendi",
+                tag: "Day Event",
+                desc: "For the Haldi, we keep it breathable and radiant. Using waterproof bases that withstand turmeric and water, coupled with floral accents. The focus is on skin that looks like skin, but better.",
+                features: ["• Dewy, waterproof base", "• Soft peach/pink blush", "• Minimal eye makeup", "• Fresh floral hair accessories"],
+                gradient: "bg-gradient-to-br from-yellow-200 to-yellow-500",
+                icon: "sun",
+                caption: "The Golden Hour Glow",
+                bgContainer: "bg-yellow-50"
+            },
+            sangeet: {
+                title: "The Sangeet Night",
+                tag: "Evening Event",
+                desc: "Glitz, glamour, and staying power. The Sangeet look is all about shimmering eyes and a base that survives hours of dancing. We use high-definition products that reflect light beautifully in flash photography.",
+                features: ["• Shimmer/Glitter Eye shadow", "• Sweat-proof setting", "• Glossy or Satin lips", "• Defined contours"],
+                gradient: "bg-gradient-to-br from-purple-700 to-indigo-900",
+                icon: "music",
+                caption: "Glamour & Glitz",
+                bgContainer: "bg-purple-50"
+            },
+            wedding: {
+                title: "The Royal Wedding",
+                tag: "Main Ceremony",
+                desc: "Traditional, Timeless, and Regal. We focus on the classic red lip (or your color choice) and eyes that speak volumes. The makeup is designed to complement heavy jewellery and the dupatta without looking cakey.",
+                features: ["• Long-wear Matte Base", "• Kohl-rimmed eyes", "• Signature Red/Maroon Lip", "• Bindi & Maang Tikka setting"],
+                gradient: "bg-gradient-to-br from-red-700 to-red-900",
+                icon: "heart",
+                caption: "Traditional Elegance",
+                bgContainer: "bg-red-50"
+            },
+            reception: {
+                title: "The Reception",
+                tag: "Gala Event",
+                desc: "Modern, Chic, and Sophisticated. Often involves changing the hair to open waves or a messy bun, with a focus on highlighters and a glass-skin finish to look stunning under ballroom lights.",
+                features: ["• Glass Skin Finish", "• Smokey Eyes", "• Nude/Mauve Lips", "• Modern Hair textures"],
+                gradient: "bg-gradient-to-br from-gray-800 to-black",
+                icon: "stars",
+                caption: "Modern Sophistication",
+                bgContainer: "bg-gray-100"
+            }
+        };
+
+        function setEvent(eventType) {
+            const data = events[eventType];
+            
+            // Update Text
+            document.getElementById('event-title').innerText = data.title;
+            document.getElementById('event-tag').innerText = data.tag;
+            document.getElementById('event-desc').innerText = data.desc;
+            document.getElementById('look-caption').innerText = data.caption;
+            
+            // Update List
+            const list = document.getElementById('makeup-list');
+            list.innerHTML = "";
+            data.features.forEach(feat => {
+                const li = document.createElement('li');
+                li.innerText = feat;
+                list.appendChild(li);
+            });
+
+            // Update Visuals (Container BG and Image Gradient)
+            const demoContainer = document.getElementById('demo-container');
+            // Remove old bg classes
+            demoContainer.classList.remove('bg-yellow-50', 'bg-purple-50', 'bg-red-50', 'bg-gray-100');
+            demoContainer.classList.add(data.bgContainer);
+
+            const visual = document.getElementById('look-visual');
+            visual.className = `aspect-[4/5] rounded-2xl shadow-inner relative overflow-hidden transition-all duration-500 ${data.gradient}`;
+
+            // Update Icon
+            const iconContainer = document.getElementById('look-icon');
+            iconContainer.setAttribute('data-lucide', data.icon);
+            lucide.createIcons(); // Re-render icon
+
+            // Update Buttons
+            const buttons = ['haldi', 'sangeet', 'wedding', 'reception'];
+            buttons.forEach(btn => {
+                const buttonEl = document.getElementById(`btn-${btn}`);
+                if(btn === eventType) {
+                    buttonEl.classList.remove('tab-inactive');
+                    buttonEl.classList.add('tab-active');
+                } else {
+                    buttonEl.classList.remove('tab-active');
+                    buttonEl.classList.add('tab-inactive');
+                }
+            });
+        }
+
+        // 2. Destination Calculator Logic
+        function calcTravel() {
+            const isMumbai = document.getElementById('loc-mum').checked;
+            const resultText = document.getElementById('travel-result');
+            
+            if (isMumbai) {
+                resultText.innerHTML = "Includes travel within Mumbai limits.";
+                resultText.classList.remove('text-yellow-300');
+                resultText.classList.add('text-emerald-100');
+            } else {
+                resultText.innerHTML = "Flight & Stay to be arranged by Client.";
+                resultText.classList.remove('text-emerald-100');
+                resultText.classList.add('text-yellow-300', 'font-bold');
+            }
+        }
+
+        // Scroll Reveal Animation (Simple intersection observer)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section h2, .price-card').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+    </script>
+</body>
+</html>
