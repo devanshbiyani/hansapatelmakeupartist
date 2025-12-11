@@ -284,34 +284,34 @@
                 </div>
 
                 <!-- Plan 2 (Highlighted) -->
-                <div class="price-card bg-emerald-900 text-white p-8 rounded-2xl shadow-xl relative transform md:-translate-y-4 border-2 border-gold">
+                <div class="price-card bg-white text-gray-800 p-8 rounded-2xl shadow-xl relative transform md:-translate-y-4 border-2 border-gold">
                     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-marigold text-emerald-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
-                    <h3 class="font-heading text-2xl text-marigold">Destination Package</h3>
-                    <p class="text-sm text-emerald-100 mb-6">Global availability. Logistics simplified.</p>
-                    <div class="text-4xl font-bold text-white mb-6">Custom</div>
+                    <h3 class="font-heading text-2xl text-emerald-900">Destination Package</h3>
+                    <p class="text-sm text-gray-500 mb-6">Global availability. Logistics simplified.</p>
+                    <div class="text-4xl font-bold text-emerald-900 mb-6">Custom</div>
                     <ul class="space-y-3 mb-8 flex-1">
-                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> <strong>All Events Coverage</strong></li>
-                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> 1 Family Member Complimentary</li>
-                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Touch-ups between events</li>
-                        <li class="flex items-center gap-2 text-emerald-100"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Travel Logic Module Included</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> <strong>All Events Coverage</strong></li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> 1 Family Member Complimentary</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Touch-ups between events</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i data-lucide="check" class="w-4 h-4 text-marigold"></i> Travel Logic Module Included</li>
                     </ul>
                     
                     <!-- Mini Travel Calculator Module -->
-                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm mb-6 border border-white/20">
-                        <p class="text-xs text-marigold uppercase font-bold mb-2">Destination Calculator</p>
+                    <div class="bg-emerald-50 p-4 rounded-lg mb-6 border border-emerald-100">
+                        <p class="text-xs text-emerald-800 uppercase font-bold mb-2">Destination Calculator</p>
                         <div class="flex gap-2 mb-2">
                             <input type="radio" name="loc" id="loc-mum" class="hidden calc-input" checked onchange="calcTravel()">
-                            <label for="loc-mum" class="flex-1 text-center text-xs py-2 rounded bg-emerald-800 cursor-pointer border border-emerald-700 hover:bg-emerald-700 transition">Mumbai</label>
+                            <label for="loc-mum" class="flex-1 text-center text-xs py-2 rounded bg-white text-emerald-900 cursor-pointer border border-emerald-200 hover:bg-emerald-100 transition shadow-sm">Mumbai</label>
                             
                             <input type="radio" name="loc" id="loc-out" class="hidden calc-input" onchange="calcTravel()">
-                            <label for="loc-out" class="flex-1 text-center text-xs py-2 rounded bg-emerald-800 cursor-pointer border border-emerald-700 hover:bg-emerald-700 transition">Outstation</label>
+                            <label for="loc-out" class="flex-1 text-center text-xs py-2 rounded bg-white text-emerald-900 cursor-pointer border border-emerald-200 hover:bg-emerald-100 transition shadow-sm">Outstation</label>
                         </div>
-                        <div id="travel-result" class="text-xs text-center italic text-emerald-100">
+                        <div id="travel-result" class="text-xs text-center italic text-emerald-700">
                             Includes travel within Mumbai limits.
                         </div>
                     </div>
 
-                    <a href="#contact" class="block text-center py-3 bg-marigold text-emerald-900 font-bold rounded-lg hover:bg-white transition">Get Custom Quote</a>
+                    <a href="#contact" class="block text-center py-3 bg-marigold text-emerald-900 font-bold rounded-lg hover:bg-yellow-400 transition">Get Custom Quote</a>
                 </div>
 
                 <!-- Plan 3 -->
@@ -464,7 +464,7 @@
             haldi: {
                 title: "Haldi & Mehendi",
                 tag: "Day Event",
-                desc: "For the Haldi, we keep it breathable and radiant. Using waterproof bases that withstand turmeric and water, coupled with floral accents. The focus is on skin that looks like skin, but better.",
+                desc: "For the Haldi, we keep it breathable and radiant. Using waterproof bases that withstand turmeric and water, coupled with floral accents in the hair. The focus is on skin that looks like skin, but better.",
                 features: ["• Dewy, waterproof base", "• Soft peach/pink blush", "• Minimal eye makeup", "• Fresh floral hair accessories"],
                 gradient: "bg-gradient-to-br from-yellow-200 to-yellow-500",
                 icon: "sun",
@@ -556,12 +556,12 @@
             
             if (isMumbai) {
                 resultText.innerHTML = "Includes travel within Mumbai limits.";
-                resultText.classList.remove('text-yellow-300');
-                resultText.classList.add('text-emerald-100');
+                resultText.classList.remove('text-red-600');
+                resultText.classList.add('text-emerald-700');
             } else {
                 resultText.innerHTML = "Flight & Stay to be arranged by Client.";
-                resultText.classList.remove('text-emerald-100');
-                resultText.classList.add('text-yellow-300', 'font-bold');
+                resultText.classList.remove('text-emerald-700');
+                resultText.classList.add('text-red-600', 'font-bold');
             }
         }
 
